@@ -44,7 +44,7 @@ export default function Hero() {
           >
             Find Your
             <br />
-            <span className="text-accent">Rhythm</span>
+            <span className="text-gradient-brand">Rhythm</span>
           </motion.h1>
 
           {/* Subtext */}

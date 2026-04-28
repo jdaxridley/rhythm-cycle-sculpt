@@ -7,9 +7,10 @@
   --foreground: #FFFFFF;
   --text-secondary: #A0A0A0;
   --text-muted: #666666;
-  --accent: #C8A97E;
-  --accent-hover: #D4B896;
-  --accent-secondary: #8B4DFF;
+  --accent: #1E7AEE;
+  --accent-hover: #1AC2B8;
+  --accent-secondary: #9B2DE5;
+  --gradient-brand: linear-gradient(90deg, #1E7AEE 0%, #1AC2B8 50%, #9B2DE5 100%);
   --divider: rgba(255, 255, 255, 0.08);
   --font-sans: 'Inter', sans-serif;
   --font-display: 'Bebas Neue', sans-serif;
@@ -45,6 +46,14 @@ body {
 ::selection {
   background: var(--accent);
   color: var(--background);
+}
+
+.text-gradient-brand {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 /* Smooth scroll with Lenis */
