@@ -189,7 +189,7 @@ export default function ClassesPage() {
                 Try any class on us. No commitment, no pressure.
               </p>
               <Link
-                href="/contact"
+                href="/reserve"
                 className="inline-flex items-center gap-2 px-10 py-5 bg-accent text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-accent-hover transition-all duration-300 hover:gap-4"
               >
                 Claim Your Free Class

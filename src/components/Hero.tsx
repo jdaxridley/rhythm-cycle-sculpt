@@ -84,7 +84,7 @@ export default function Hero() {
           className="flex flex-wrap items-center justify-center gap-4"
         >
           <Link
-            href="#contact"
+            href="/reserve"
             className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-brand text-background text-xs sm:text-sm tracking-[0.25em] uppercase font-semibold overflow-hidden transition-transform duration-300 hover:scale-[1.03]"
           >
             <span className="relative z-10">First Class Free</span>

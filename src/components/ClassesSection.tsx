@@ -87,7 +87,7 @@ export default function ClassesSection() {
               transition={{ duration: 0.7, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
             >
               <Link
-                href="#contact"
+                href="/reserve"
                 className="group relative block overflow-hidden rounded-3xl bg-background-secondary"
               >
                 <div className="grid grid-cols-1 md:grid-cols-12 items-stretch min-h-[280px]">

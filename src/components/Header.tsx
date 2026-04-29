@@ -67,7 +67,7 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                href="#contact"
+                href="/reserve"
                 className="ml-4 px-6 py-3 rounded-full bg-gradient-brand text-background text-xs tracking-[0.25em] uppercase font-semibold transition-transform duration-300 hover:scale-[1.04]"
               >
                 First Class Free
@@ -129,7 +129,7 @@ export default function Header() {
               transition={{ delay: 0.3 }}
             >
               <Link
-                href="#contact"
+                href="/reserve"
                 onClick={() => setMenuOpen(false)}
                 className="mt-4 inline-block px-10 py-4 rounded-full bg-gradient-brand text-background text-base tracking-[0.25em] uppercase font-semibold"
               >
