@@ -3,22 +3,22 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-type Tile = { src: string; label: string };
+type Tile = { src: string; alt: string };
 
 const rowOne: Tile[] = [
-  { src: "/hero-class.jpg", label: "Cycle Room" },
-  { src: "/studio-yoga.png", label: "Movement Studio" },
-  { src: "/cycle.jpg", label: "Shoe Cubbies" },
-  { src: "/studio-cycle.jpg", label: "Showers" },
-  { src: "/barre.jpg", label: "Equipment" },
+  { src: "/hero-class.jpg", alt: "Cycle room with class in session" },
+  { src: "/studio-yoga.png", alt: "Movement studio with mats and barre" },
+  { src: "/cycle.jpg", alt: "Cycling shoe cubbies" },
+  { src: "/studio-cycle.jpg", alt: "Studio shower and vanity" },
+  { src: "/barre.jpg", alt: "Equipment shelf" },
 ];
 
 const rowTwo: Tile[] = [
-  { src: "/studio-bathroom.jpg", label: "Barre Floor" },
-  { src: "/fit-body-class.jpg", label: "Sculpt Energy" },
-  { src: "/energy-towels.jpg", label: "Cycle Vibes" },
-  { src: "/cycle-action.jpg", label: "On The Bike" },
-  { src: "/mat-pilates.jpg", label: "Pilates Flow" },
+  { src: "/studio-bathroom.jpg", alt: "Barre instructor lunging at the barre" },
+  { src: "/fit-body-class.jpg", alt: "Fit body class with weights" },
+  { src: "/energy-towels.jpg", alt: "Cycle class waving towels" },
+  { src: "/cycle-action.jpg", alt: "Cycle instructor on the bike" },
+  { src: "/mat-pilates.jpg", alt: "Mat pilates class with stability balls" },
 ];
 
 function MarqueeRow({
@@ -45,22 +45,15 @@ function MarqueeRow({
         {loop.map((tile, i) => (
           <div
             key={`${tile.src}-${i}`}
-            className="group relative flex-shrink-0 w-[78vw] sm:w-[55vw] md:w-[38vw] lg:w-[28vw] xl:w-[24vw] aspect-[4/3] overflow-hidden rounded-2xl bg-background"
+            className="relative flex-shrink-0 w-[78vw] sm:w-[55vw] md:w-[38vw] lg:w-[28vw] xl:w-[24vw] aspect-[4/3] overflow-hidden rounded-2xl bg-background"
           >
             <Image
               src={tile.src}
-              alt={tile.label}
+              alt={tile.alt}
               fill
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+              className="object-cover"
               sizes="(max-width: 768px) 78vw, (max-width: 1024px) 38vw, 28vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/85 via-background/10 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500" />
-            <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-6 flex items-center gap-3">
-              <span className="w-6 h-px bg-foreground/60" />
-              <p className="text-foreground text-[11px] lg:text-xs tracking-[0.3em] uppercase font-medium">
-                {tile.label}
-              </p>
-            </div>
           </div>
         ))}
       </div>
