@@ -27,7 +27,7 @@ export default function Footer() {
           <div className="lg:col-span-5">
             <Link href="/" className="inline-block mb-6">
               <Image
-                src="/logo-white.png"
+                src="/logo-black.png"
                 alt="Rhythm Cycle & Sculpt"
                 width={200}
                 height={48}

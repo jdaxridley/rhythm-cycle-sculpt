@@ -18,9 +18,11 @@ export default function Hero() {
         >
           <source src="/video-hero.mp4" type="video/mp4" />
         </video>
-        {/* Light overlays — fade top/bottom so the wordmark stays legible without burying the video */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/15 to-background/85" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_rgba(10,10,10,0.45)_100%)]" />
+        {/* Soft white wash — keep the studio video readable but blend into the light page */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/30 to-background/90" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_rgba(250,250,250,0.55)_100%)]" />
+        {/* Brand color wash — atmospheric tint over the video */}
+        <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_85%_15%,_rgba(30,122,238,0.18)_0%,_transparent_70%),radial-gradient(50%_50%_at_15%_75%,_rgba(155,45,229,0.16)_0%,_transparent_70%)]" />
       </div>
 
       {/* Vertical hairline accents — letsryde-style */}

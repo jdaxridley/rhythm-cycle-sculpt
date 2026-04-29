@@ -46,7 +46,7 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="relative z-50">
               <Image
-                src="/logo-white.png"
+                src="/logo-black.png"
                 alt="Rhythm Cycle & Sculpt"
                 width={180}
                 height={40}
