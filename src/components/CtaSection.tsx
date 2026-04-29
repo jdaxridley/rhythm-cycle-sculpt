@@ -8,7 +8,7 @@ export default function CtaSection() {
   return (
     <section
       id="contact"
-      className="relative py-32 sm:py-40 overflow-hidden bg-background-secondary"
+      className="relative py-24 sm:py-28 overflow-hidden bg-background-secondary"
     >
       {/* Background photo */}
       <div className="absolute inset-0 opacity-30">

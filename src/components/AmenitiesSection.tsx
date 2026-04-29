@@ -14,7 +14,7 @@ const amenities = [
 
 export default function Amenities() {
   return (
-    <section className="relative py-28 sm:py-36 bg-background overflow-hidden">
+    <section className="relative py-20 sm:py-24 bg-background overflow-hidden">
       {/* Background photo strip on the right */}
       <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block opacity-40">
         <Image

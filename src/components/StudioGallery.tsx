@@ -63,7 +63,7 @@ function MarqueeRow({
 
 export default function StudioGallery() {
   return (
-    <section className="relative py-28 sm:py-36 bg-background-secondary overflow-hidden">
+    <section className="relative py-20 sm:py-24 bg-background-secondary overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div

@@ -88,7 +88,7 @@ const team: Instructor[] = [
 
 export default function InstructorsSection() {
   return (
-    <section id="instructors" className="relative py-28 sm:py-36 bg-background-secondary overflow-hidden">
+    <section id="instructors" className="relative py-20 sm:py-24 bg-background-secondary overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div

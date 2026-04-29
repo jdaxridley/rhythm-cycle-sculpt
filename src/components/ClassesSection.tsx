@@ -54,7 +54,7 @@ const classes = [
 
 export default function ClassesSection() {
   return (
-    <section id="classes" className="relative py-28 sm:py-36 bg-background">
+    <section id="classes" className="relative py-20 sm:py-24 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div

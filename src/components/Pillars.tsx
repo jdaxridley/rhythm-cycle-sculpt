@@ -25,7 +25,7 @@ const pillars = [
 
 export default function Pillars() {
   return (
-    <section className="relative py-28 sm:py-36 overflow-hidden">
+    <section className="relative py-20 sm:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section eyebrow */}
         <motion.div
