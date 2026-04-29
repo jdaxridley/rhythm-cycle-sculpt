@@ -142,6 +142,32 @@ html.lenis, html.lenis body { height: auto; }
   background: var(--gradient-brand);
 }
 
+/* Marquee — used in StudioGallery */
+@keyframes marquee-x {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+@keyframes marquee-x-reverse {
+  from { transform: translate3d(-50%, 0, 0); }
+  to   { transform: translate3d(0, 0, 0); }
+}
+.animate-marquee {
+  animation: marquee-x var(--marquee-duration, 60s) linear infinite;
+  will-change: transform;
+}
+.animate-marquee-reverse {
+  animation: marquee-x-reverse var(--marquee-duration, 60s) linear infinite;
+  will-change: transform;
+}
+.marquee-mask {
+  mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+.marquee-track:hover .animate-marquee,
+.marquee-track:hover .animate-marquee-reverse {
+  animation-play-state: paused;
+}
+
 /* Hairline divider — the letsryde-style vertical line */
 .hairline-v {
   width: 1px;
