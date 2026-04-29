@@ -18,10 +18,10 @@ export default function AboutSection() {
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
               <Image
-                src="/fit-body-class.jpg"
-                alt="Inside Rhythm Cycle & Sculpt"
+                src="/instructor-tommy.png"
+                alt="Tommy Gray, Founder of Rhythm Cycle & Sculpt"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
@@ -31,7 +31,7 @@ export default function AboutSection() {
             <div className="absolute -bottom-4 left-6 lg:-bottom-5 lg:left-8 bg-background border border-divider rounded-full px-5 py-2.5 flex items-center gap-3">
               <span className="w-2 h-2 rounded-full bg-gradient-brand" />
               <span className="text-foreground text-xs tracking-[0.3em] uppercase font-medium">
-                Inside the studio
+                Tommy &middot; Founder
               </span>
             </div>
 
@@ -52,21 +52,23 @@ export default function AboutSection() {
               The Story
             </p>
             <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-[0.95] mb-8">
-              Boutique fitness,
+              Built by Tommy.
               <br />
-              <span className="text-gradient-brand">built for Shawnee.</span>
+              <span className="text-gradient-brand">Built for Shawnee.</span>
             </h2>
 
             <div className="space-y-5 text-text-secondary text-base lg:text-lg leading-relaxed max-w-xl">
               <p>
-                Rhythm Cycle &amp; Sculpt was built on a simple idea: that the
-                best workout in your week shouldn&rsquo;t require a 30-minute
-                drive to the Plaza.
+                Tommy Gray grew up here. He left to teach history, then traded
+                lesson plans for an international flight attendant uniform —
+                Dubai based, 80+ countries, six years in the air.
               </p>
               <p>
-                We&rsquo;re a boutique studio in the heart of Shawnee — five
-                class formats, certified instructors who learn your name, and a
-                space designed to feel like the warmest room in your routine.
+                Along the way he taught cycle and sculpt classes everywhere he
+                landed — Dubai, Miami, KC. Then he brought it home. Rhythm Cycle
+                &amp; Sculpt is the studio Shawnee always deserved: five class
+                formats, instructors who learn your name, and a room that feels
+                like the warmest hour in your week.
               </p>
               <p className="text-foreground">
                 Whether it&rsquo;s your first class or your fiftieth, we&rsquo;re

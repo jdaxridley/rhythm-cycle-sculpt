@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Hero() {
@@ -9,14 +8,16 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <Image
-          src="/hero-class.jpg"
-          alt="Cycle class at Rhythm Cycle & Sculpt"
-          fill
-          className="object-cover object-center scale-105"
-          priority
-          sizes="100vw"
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/hero-class.jpg"
+          className="absolute inset-0 w-full h-full object-cover object-center scale-105"
+        >
+          <source src="/video-hero.mp4" type="video/mp4" />
+        </video>
         {/* Vignette overlays — heavier than before for centered hero readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/55 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(10,10,10,0.85)_100%)]" />

@@ -7,6 +7,7 @@ import Hero from "@/components/Hero";
 import Pillars from "@/components/Pillars";
 import ClassesSection from "@/components/ClassesSection";
 import AboutSection from "@/components/AboutSection";
+import InstructorsSection from "@/components/InstructorsSection";
 import StudioGallery from "@/components/StudioGallery";
 import AmenitiesSection from "@/components/AmenitiesSection";
 import CtaSection from "@/components/CtaSection";
@@ -40,6 +41,7 @@ export default function Home() {
         <Pillars />
         <ClassesSection />
         <AboutSection />
+        <InstructorsSection />
         <StudioGallery />
         <AmenitiesSection />
         <CtaSection />
