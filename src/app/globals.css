@@ -163,11 +163,6 @@ html.lenis, html.lenis body { height: auto; }
   mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
   -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
 }
-.marquee-track:hover .animate-marquee,
-.marquee-track:hover .animate-marquee-reverse {
-  animation-play-state: paused;
-}
-
 /* Hairline divider — the letsryde-style vertical line */
 .hairline-v {
   width: 1px;

@@ -8,17 +8,17 @@ type Tile = { src: string; label: string };
 const rowOne: Tile[] = [
   { src: "/hero-class.jpg", label: "Cycle Room" },
   { src: "/studio-yoga.png", label: "Movement Studio" },
-  { src: "/studio-cubbies.jpg", label: "Cubbies" },
-  { src: "/studio-cycle.jpg", label: "Premium Bikes" },
-  { src: "/studio-weights.jpg", label: "Strength Floor" },
+  { src: "/cycle.jpg", label: "Shoe Cubbies" },
+  { src: "/studio-cycle.jpg", label: "Showers" },
+  { src: "/barre.jpg", label: "Equipment" },
 ];
 
 const rowTwo: Tile[] = [
-  { src: "/barre.jpg", label: "Barre Setup" },
-  { src: "/studio-bathroom.jpg", label: "Showers" },
-  { src: "/energy-towels.jpg", label: "Towels Provided" },
-  { src: "/cycle.jpg", label: "Bike Floor" },
-  { src: "/mat-pilates.jpg", label: "Pilates Mats" },
+  { src: "/studio-bathroom.jpg", label: "Barre Floor" },
+  { src: "/fit-body-class.jpg", label: "Sculpt Energy" },
+  { src: "/energy-towels.jpg", label: "Cycle Vibes" },
+  { src: "/cycle-action.jpg", label: "On The Bike" },
+  { src: "/mat-pilates.jpg", label: "Pilates Flow" },
 ];
 
 function MarqueeRow({
