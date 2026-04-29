@@ -103,24 +103,23 @@ body {
   background: var(--gradient-brand-soft);
 }
 
-/* Animated gradient — used sparingly on hero wordmark */
+/* Animated gradient — used sparingly on hero wordmark.
+   Symmetric stops + linear timing + travel of full bg-size = seamless infinite loop. */
 .text-gradient-brand-animated {
   background: linear-gradient(
     90deg,
     #1E7AEE 0%,
-    #1AC2B8 16%,
-    #9B2DE5 33%,
-    #1E7AEE 50%,
-    #1AC2B8 66%,
-    #9B2DE5 83%,
+    #1AC2B8 25%,
+    #9B2DE5 50%,
+    #1AC2B8 75%,
     #1E7AEE 100%
   );
-  background-size: 300% 100%;
+  background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: gradient-shift 4.5s linear infinite;
+  animation: gradient-shift 6s linear infinite;
 }
 
 @keyframes gradient-shift {
