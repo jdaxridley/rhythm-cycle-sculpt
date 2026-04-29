@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const amenities = [
-  { title: "Eucalyptus Towels", description: "Cold and infused — at the start, the middle, and the end." },
-  { title: "Protein Shakes", description: "Complimentary post-class shake on the house." },
-  { title: "Private Showers", description: "Individual suites with full-size premium products." },
-  { title: "Dyson Hair Care", description: "Supersonic dryers and Airwrap styling tools." },
-  { title: "Specialty Coffee", description: "Pre-class lift or post-class linger — your call." },
-  { title: "Cubby Storage", description: "Numbered cubbies. Everything where you left it." },
+  { title: "Built-In Lockers", description: "Numbered lockers with combination locks already built in. Nothing to carry, nothing to lose." },
+  { title: "Cycling Shoes", description: "Free clip-in shoes at the front desk for every ride. Just tell us your size." },
+  { title: "Sweat Towels", description: "Fresh towels at the bike, on the floor, and at the door on your way out." },
+  { title: "Stocked Bathrooms", description: "Toiletries and beauty accessories so you can walk in straight from work and out the door ready for anything." },
+  { title: "Hot Showers", description: "Private showers stocked with towels and full-size toiletries. Take your time." },
+  { title: "Coffee Lounge", description: "Coffee, tea, and snacks before class or after. Linger as long as you like." },
 ];
 
 export default function Amenities() {
