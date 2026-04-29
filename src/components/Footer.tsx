@@ -8,11 +8,11 @@ const hours = [
 ];
 
 const classLinks = [
-  { label: "Cycle", href: "/reserve", color: "var(--class-cycle)" },
-  { label: "Barre", href: "/reserve", color: "var(--class-barre)" },
-  { label: "Fit Body", href: "/reserve", color: "var(--class-fitbody)" },
-  { label: "Mat Pilates", href: "/reserve", color: "var(--class-matpilates)" },
-  { label: "Yoga", href: "/reserve", color: "var(--class-yoga)" },
+  { label: "Cycle", href: "/reserve?class=Cycle", color: "var(--class-cycle)" },
+  { label: "Barre", href: "/reserve?class=Barre", color: "var(--class-barre)" },
+  { label: "Fit Body", href: "/reserve?class=Fit+Body", color: "var(--class-fitbody)" },
+  { label: "Mat Pilates", href: "/reserve?class=Mat+Pilates", color: "var(--class-matpilates)" },
+  { label: "Yoga", href: "/reserve?class=Yoga", color: "var(--class-yoga)" },
 ];
 
 export default function Footer() {

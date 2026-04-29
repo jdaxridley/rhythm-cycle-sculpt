@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Lenis from "lenis";
 import Header from "@/components/Header";
@@ -635,9 +636,19 @@ function ReserveModal({
 
 /* -------------------- Page -------------------- */
 
-export default function ReservePage() {
+function ReservePageInner() {
+  const params = useSearchParams();
+  const initialFilter: "All" | ClassKey = useMemo(() => {
+    const raw = params.get("class");
+    if (!raw) return "All";
+    const match = filterOptions.find(
+      (opt) => opt !== "All" && opt.toLowerCase() === raw.toLowerCase()
+    );
+    return match ?? "All";
+  }, [params]);
+
   const [activeDay, setActiveDay] = useState<DayKey>("wed");
-  const [activeFilter, setActiveFilter] = useState<"All" | ClassKey>("All");
+  const [activeFilter, setActiveFilter] = useState<"All" | ClassKey>(initialFilter);
   const [selected, setSelected] = useState<ClassSlot | null>(null);
 
   useEffect(() => {
@@ -930,5 +941,13 @@ export default function ReservePage() {
         )}
       </AnimatePresence>
     </>
+  );
+}
+
+export default function ReservePage() {
+  return (
+    <Suspense fallback={null}>
+      <ReservePageInner />
+    </Suspense>
   );
 }
