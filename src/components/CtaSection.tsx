@@ -72,9 +72,7 @@ export default function CtaSection() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Link
-            href="https://www.rhythmcyclesculpt.com/classes"
-            target="_blank"
-            rel="noreferrer"
+            href="/reserve"
             className="group relative inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gradient-brand text-background text-xs sm:text-sm tracking-[0.25em] uppercase font-semibold transition-transform duration-300 hover:scale-[1.03]"
           >
             Claim Your Free Class
