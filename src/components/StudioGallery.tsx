@@ -18,7 +18,7 @@ const rowTwo: Tile[] = [
   { src: "/fit-body-class.jpg", alt: "Fit body class with weights", position: "center 25%" },
   { src: "/energy-towels.jpg", alt: "Cycle class waving towels", position: "center 35%" },
   { src: "/cycle-action.jpg", alt: "Cycle instructor on the bike", position: "center 18%" },
-  { src: "/mat-pilates.jpg", alt: "Mat pilates class with stability balls", position: "center 30%" },
+  { src: "/mat-pilates.jpg", alt: "Mat pilates class with stability balls", position: "center 55%" },
 ];
 
 function MarqueeRow({
