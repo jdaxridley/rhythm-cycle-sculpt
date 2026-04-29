@@ -18,9 +18,9 @@ export default function Hero() {
         >
           <source src="/video-hero.mp4" type="video/mp4" />
         </video>
-        {/* Vignette overlays — heavier than before for centered hero readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/55 to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(10,10,10,0.85)_100%)]" />
+        {/* Light overlays — fade top/bottom so the wordmark stays legible without burying the video */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/55 via-background/15 to-background/85" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_rgba(10,10,10,0.45)_100%)]" />
       </div>
 
       {/* Vertical hairline accents — letsryde-style */}
