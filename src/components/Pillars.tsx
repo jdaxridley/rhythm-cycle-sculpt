@@ -41,7 +41,7 @@ export default function Pillars() {
           <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-[0.95]">
             One studio.
             <br />
-            <span className="text-gradient-brand">Every body.</span>
+            <span className="text-gradient-brand-animated">Every body.</span>
           </h2>
         </motion.div>
 

@@ -54,7 +54,7 @@ export default function AboutSection() {
             <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-[0.95] mb-8">
               Built by Tommy.
               <br />
-              <span className="text-gradient-brand">Built for Shawnee.</span>
+              <span className="text-gradient-brand-animated">Built for Shawnee.</span>
             </h2>
 
             <div className="space-y-5 text-text-secondary text-base lg:text-lg leading-relaxed max-w-xl">

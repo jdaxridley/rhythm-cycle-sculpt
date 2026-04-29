@@ -41,7 +41,7 @@ export default function Amenities() {
               The Details
             </p>
             <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-[0.95] mb-8">
-              More than a <span className="text-gradient-brand">workout.</span>
+              More than a <span className="text-gradient-brand-animated">workout.</span>
             </h2>
             <p className="text-text-secondary text-base lg:text-lg leading-relaxed max-w-md">
               Every detail is here for the same reason — so the best 50 minutes

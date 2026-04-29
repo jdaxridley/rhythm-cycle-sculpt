@@ -102,7 +102,7 @@ export default function InstructorsSection() {
             The Team
           </p>
           <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-[0.95] mb-6">
-            Meet your <span className="text-gradient-brand">instructors.</span>
+            Meet your <span className="text-gradient-brand-animated">instructors.</span>
           </h2>
           <p className="text-text-secondary text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
             Eight people who&rsquo;ll know your name by the second class.
