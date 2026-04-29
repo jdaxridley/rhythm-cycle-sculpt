@@ -50,11 +50,12 @@ const instructors: Record<InstructorKey, Instructor> = {
 
 const classMeta: Record<
   ClassKey,
-  { color: string; image: string; tagline: string }
+  { color: string; image: string; imagePosition?: string; tagline: string }
 > = {
   Cycle: {
     color: "var(--class-cycle)",
     image: "/cycle-action.jpg",
+    imagePosition: "center 18%",
     tagline: "45 minutes. One ride. Full reset.",
   },
   Barre: {
@@ -263,6 +264,7 @@ function SpotlightHero({
               priority
               sizes="(max-width: 1024px) 100vw, 60vw"
               className="object-cover"
+              style={{ objectPosition: meta.imagePosition ?? "center" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
             {/* Class badge */}
@@ -468,6 +470,7 @@ function ReserveModal({
                   fill
                   sizes="(max-width: 640px) 100vw, 512px"
                   className="object-cover"
+                  style={{ objectPosition: meta.imagePosition ?? "center" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
                 <div className="absolute bottom-4 left-6 right-6">

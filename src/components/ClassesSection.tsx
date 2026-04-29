@@ -17,6 +17,7 @@ const classes = [
   {
     name: "Cycle",
     image: "/cycle-action.jpg",
+    imagePosition: "center 18%",
     color: "var(--class-cycle)",
     duration: "45 min",
     intensity: "High energy",
@@ -99,6 +100,7 @@ export default function ClassesSection() {
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                       sizes="(max-width: 768px) 100vw, 40vw"
+                      style={{ objectPosition: cls.imagePosition ?? "center" }}
                     />
                     <div
                       className="absolute inset-0 mix-blend-multiply opacity-30 transition-opacity duration-500 group-hover:opacity-15"
