@@ -4,9 +4,11 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Pillars from "@/components/Pillars";
 import ClassesSection from "@/components/ClassesSection";
-import AmenitiesSection from "@/components/AmenitiesSection";
 import AboutSection from "@/components/AboutSection";
+import StudioGallery from "@/components/StudioGallery";
+import AmenitiesSection from "@/components/AmenitiesSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 
@@ -35,9 +37,11 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Pillars />
         <ClassesSection />
-        <AmenitiesSection />
         <AboutSection />
+        <StudioGallery />
+        <AmenitiesSection />
         <CtaSection />
       </main>
       <Footer />

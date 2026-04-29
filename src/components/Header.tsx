@@ -6,10 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "/classes", label: "Classes" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "#classes", label: "Classes" },
+  { href: "#about", label: "About" },
+  { href: "#contact", label: "Visit" },
 ];
 
 export default function Header() {
@@ -66,8 +65,8 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                href="/contact"
-                className="ml-4 px-6 py-3 bg-accent text-background text-sm tracking-widest uppercase font-semibold hover:bg-accent-hover transition-colors duration-300"
+                href="#contact"
+                className="ml-4 px-6 py-3 rounded-full bg-gradient-brand text-background text-xs tracking-[0.25em] uppercase font-semibold transition-transform duration-300 hover:scale-[1.04]"
               >
                 First Class Free
               </Link>
@@ -128,9 +127,9 @@ export default function Header() {
               transition={{ delay: 0.3 }}
             >
               <Link
-                href="/contact"
+                href="#contact"
                 onClick={() => setMenuOpen(false)}
-                className="mt-4 inline-block px-10 py-4 bg-accent text-background text-xl tracking-widest uppercase font-display hover:bg-accent-hover transition-colors"
+                className="mt-4 inline-block px-10 py-4 rounded-full bg-gradient-brand text-background text-base tracking-[0.25em] uppercase font-semibold"
               >
                 First Class Free
               </Link>

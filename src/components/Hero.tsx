@@ -6,121 +6,119 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Image */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="/hero-cycling.jpg"
-          alt="Cycling class in action at Rhythm Cycle & Sculpt"
+          src="/hero-class.jpg"
+          alt="Cycle class at Rhythm Cycle & Sculpt"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center scale-105"
           priority
           sizes="100vw"
         />
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
+        {/* Vignette overlays — heavier than before for centered hero readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/55 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(10,10,10,0.85)_100%)]" />
       </div>
+
+      {/* Vertical hairline accents — letsryde-style */}
+      <div className="hairline-v absolute left-8 top-12 bottom-12 hidden md:block" />
+      <div className="hairline-v absolute right-8 top-12 bottom-12 hidden md:block" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full">
-        <div className="max-w-2xl">
-          {/* Eyebrow */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-accent text-sm tracking-[0.3em] uppercase mb-6 font-medium"
-          >
-            Shawnee&rsquo;s Premier Boutique Studio
-          </motion.p>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 text-center">
+        {/* Eyebrow */}
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-text-secondary text-[11px] sm:text-xs tracking-[0.5em] uppercase mb-8 font-medium"
+        >
+          <span className="inline-flex items-center gap-3">
+            <span className="w-8 h-px bg-divider" />
+            Shawnee, KS &middot; Since 2023
+            <span className="w-8 h-px bg-divider" />
+          </span>
+        </motion.p>
 
-          {/* Main Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="font-display text-6xl sm:text-7xl lg:text-8xl xl:text-9xl leading-[0.9] tracking-wide uppercase mb-6"
-          >
-            Find Your
-            <br />
-            <span className="text-gradient-brand">Rhythm</span>
-          </motion.h1>
+        {/* Massive Wordmark */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="font-display leading-[0.85] tracking-[0.02em] uppercase mb-2"
+        >
+          <span className="block text-[22vw] md:text-[18vw] lg:text-[15vw] xl:text-[13rem] text-gradient-brand-animated">
+            Rhythm
+          </span>
+        </motion.h1>
 
-          {/* Subtext */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-text-secondary text-lg sm:text-xl leading-relaxed mb-10 max-w-lg"
-          >
-            Cycle, Barre, Yoga, Pilates, and Fit Body classes in an
-            energy-filled studio with premium amenities.
-          </motion.p>
+        {/* Script tagline */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.6 }}
+          className="font-script text-3xl sm:text-4xl lg:text-5xl text-foreground/90 mb-10 -mt-2"
+        >
+          cycle <span className="text-text-muted">&bull;</span> sculpt
+        </motion.p>
 
-          {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex flex-wrap gap-4"
+        {/* Supporting line */}
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-text-secondary text-base sm:text-lg max-w-xl mx-auto mb-12 leading-relaxed"
+        >
+          Find your rhythm at Kansas City&rsquo;s most welcoming
+          boutique cycle &amp; sculpt studio.
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1 }}
+          className="flex flex-wrap items-center justify-center gap-4"
+        >
+          <Link
+            href="#contact"
+            className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-brand text-background text-xs sm:text-sm tracking-[0.25em] uppercase font-semibold overflow-hidden transition-transform duration-300 hover:scale-[1.03]"
           >
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-accent-hover transition-all duration-300 hover:gap-4"
+            <span className="relative z-10">First Class Free</span>
+            <svg
+              className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2.5}
             >
-              First Class Free
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-            <Link
-              href="/classes"
-              className="inline-flex items-center gap-2 px-8 py-4 border border-divider text-foreground text-sm tracking-[0.2em] uppercase font-medium hover:border-accent hover:text-accent transition-all duration-300"
-            >
-              View Classes
-            </Link>
-          </motion.div>
-
-          {/* Trust strip */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            className="mt-12 flex items-center gap-6 text-text-muted text-xs tracking-widest uppercase"
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+          <Link
+            href="#classes"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-foreground/20 text-foreground text-xs sm:text-sm tracking-[0.25em] uppercase font-medium hover:border-foreground/60 hover:bg-foreground/5 transition-all duration-300"
           >
-            <span className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              5-Star Rated
-            </span>
-            <span className="w-px h-4 bg-divider" />
-            <span>Cycle &bull; Barre &bull; Yoga &bull; Pilates &bull; Fit Body</span>
-          </motion.div>
-        </div>
+            View Classes
+          </Link>
+        </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll cue */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        transition={{ delay: 1.5, duration: 0.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          className="w-6 h-10 border-2 border-divider rounded-full flex justify-center pt-2"
-        >
-          <div className="w-1 h-2 bg-accent rounded-full" />
-        </motion.div>
+        <span className="text-text-muted text-[10px] tracking-[0.4em] uppercase">Scroll</span>
+        <motion.span
+          animate={{ scaleY: [0.3, 1, 0.3], originY: 0 }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="block w-px h-12 bg-gradient-to-b from-foreground/60 to-transparent"
+        />
       </motion.div>
     </section>
   );

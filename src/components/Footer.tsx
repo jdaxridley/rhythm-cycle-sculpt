@@ -1,47 +1,76 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const footerLinks = {
-  classes: [
-    { label: "Cycle", href: "/classes" },
-    { label: "Barre", href: "/classes" },
-    { label: "Fit Body", href: "/classes" },
-    { label: "Mat Pilates", href: "/classes" },
-    { label: "Yoga", href: "/classes" },
-  ],
-  studio: [
-    { label: "About Us", href: "/about" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Contact", href: "/contact" },
-  ],
-};
+const hours = [
+  { days: "Mon – Thu", time: "5:00 AM – 8:00 PM" },
+  { days: "Friday", time: "5:00 AM – 6:00 PM" },
+  { days: "Sat – Sun", time: "7:30 AM – 12:30 PM" },
+];
+
+const classLinks = [
+  { label: "Cycle", href: "#classes", color: "var(--class-cycle)" },
+  { label: "Barre", href: "#classes", color: "var(--class-barre)" },
+  { label: "Fit Body", href: "#classes", color: "var(--class-fitbody)" },
+  { label: "Mat Pilates", href: "#classes", color: "var(--class-matpilates)" },
+  { label: "Yoga", href: "#classes", color: "var(--class-yoga)" },
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t border-divider">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-          {/* Brand column */}
-          <div className="lg:col-span-2">
+    <footer className="relative bg-background border-t border-divider">
+      {/* Top gradient hairline */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-brand opacity-60" />
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
+          {/* Brand */}
+          <div className="lg:col-span-5">
             <Link href="/" className="inline-block mb-6">
               <Image
                 src="/logo-white.png"
                 alt="Rhythm Cycle & Sculpt"
-                width={160}
-                height={36}
-                className="h-9 w-auto"
+                width={200}
+                height={48}
+                className="h-12 w-auto"
               />
             </Link>
-            <p className="text-text-secondary text-sm leading-relaxed max-w-sm mb-6">
-              Shawnee&rsquo;s premier boutique cycling and sculpt studio. Five
-              class formats. Premium amenities. Your first class is always free.
+            <p className="text-text-secondary text-sm leading-relaxed max-w-sm mb-8">
+              Shawnee&rsquo;s boutique cycle &amp; sculpt studio. Five class
+              formats, one welcoming room, your first class always free.
             </p>
-            <div className="flex items-center gap-4">
+
+            {/* Address + contact */}
+            <address className="not-italic space-y-2 text-sm text-text-secondary mb-6">
+              <p className="text-foreground">
+                7470 Nieman Rd
+                <br />
+                Shawnee, KS 66203
+              </p>
+              <p>
+                <a
+                  href="tel:+19136697396"
+                  className="hover:text-foreground transition-colors"
+                >
+                  (913) 669-7396
+                </a>
+              </p>
+              <p>
+                <a
+                  href="mailto:shawnee@rhythmcyclesculpt.com"
+                  className="hover:text-foreground transition-colors"
+                >
+                  shawnee@rhythmcyclesculpt.com
+                </a>
+              </p>
+            </address>
+
+            {/* Social */}
+            <div className="flex items-center gap-3">
               <a
-                href="https://instagram.com/rhythmcyclingstudio"
+                href="https://www.instagram.com/rhythmcyclesculpt/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center border border-divider text-text-secondary hover:border-accent hover:text-accent transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-divider text-text-secondary hover:border-foreground hover:text-foreground transition-colors"
                 aria-label="Instagram"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -51,18 +80,22 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Classes links */}
-          <div>
-            <h4 className="text-xs tracking-[0.3em] uppercase text-text-muted font-medium mb-6">
+          {/* Classes */}
+          <div className="lg:col-span-3">
+            <h4 className="text-[11px] tracking-[0.4em] uppercase text-text-muted font-medium mb-6">
               Classes
             </h4>
             <ul className="space-y-3">
-              {footerLinks.classes.map((link) => (
+              {classLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-text-secondary hover:text-foreground transition-colors"
+                    className="group inline-flex items-center gap-3 text-sm text-text-secondary hover:text-foreground transition-colors"
                   >
+                    <span
+                      className="w-1.5 h-1.5 rounded-full transition-transform duration-300 group-hover:scale-150"
+                      style={{ background: link.color }}
+                    />
                     {link.label}
                   </Link>
                 </li>
@@ -70,48 +103,37 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Studio links */}
-          <div>
-            <h4 className="text-xs tracking-[0.3em] uppercase text-text-muted font-medium mb-6">
-              Studio
+          {/* Hours */}
+          <div className="lg:col-span-4">
+            <h4 className="text-[11px] tracking-[0.4em] uppercase text-text-muted font-medium mb-6">
+              Hours
             </h4>
             <ul className="space-y-3">
-              {footerLinks.studio.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-text-secondary hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
+              {hours.map((row) => (
+                <li
+                  key={row.days}
+                  className="flex items-center justify-between text-sm border-b border-divider/60 pb-3 last:border-0"
+                >
+                  <span className="text-text-secondary">{row.days}</span>
+                  <span className="text-foreground font-medium">{row.time}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-8">
-              <p className="text-xs tracking-[0.3em] uppercase text-text-muted font-medium mb-3">
-                Visit Us
-              </p>
-              <address className="not-italic text-sm text-text-secondary leading-relaxed">
-                Shawnee, KS
-                <br />
-                {/* TODO: Add full address from Tommy */}
-              </address>
-            </div>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-divider flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-text-muted text-xs tracking-wider">
-            &copy; {new Date().getFullYear()} Rhythm Cycle & Sculpt. All rights reserved.
+          <p className="text-text-muted text-[11px] tracking-[0.2em] uppercase">
+            &copy; {new Date().getFullYear()} Rhythm Cycle &amp; Sculpt
           </p>
-          <p className="text-text-muted text-xs tracking-wider">
-            Built by{" "}
+          <p className="text-text-muted text-[11px] tracking-[0.2em] uppercase">
+            Site by{" "}
             <a
               href="https://ridleywebworks.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-text-secondary hover:text-accent transition-colors"
+              className="text-text-secondary hover:text-foreground transition-colors"
             >
               Ridley Web Works
             </a>

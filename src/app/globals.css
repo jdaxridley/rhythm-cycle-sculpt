@@ -1,19 +1,38 @@
 @import "tailwindcss";
 
 :root {
+  /* Surface */
   --background: #0A0A0A;
-  --background-secondary: #141414;
+  --background-secondary: #111111;
   --background-tertiary: #1A1A1A;
   --foreground: #FFFFFF;
-  --text-secondary: #A0A0A0;
-  --text-muted: #666666;
+  --text-secondary: #B5B5B8;
+  --text-muted: #6B6B70;
+  --divider: rgba(255, 255, 255, 0.08);
+
+  /* Brand gradient stops (logo-derived) */
+  --brand-blue: #1E7AEE;
+  --brand-cyan: #1AC2B8;
+  --brand-purple: #9B2DE5;
+  --gradient-brand: linear-gradient(90deg, #1E7AEE 0%, #1AC2B8 50%, #9B2DE5 100%);
+  --gradient-brand-soft: linear-gradient(90deg, rgba(30,122,238,0.12) 0%, rgba(26,194,184,0.12) 50%, rgba(155,45,229,0.12) 100%);
+
+  /* Accent (default = brand blue) */
   --accent: #1E7AEE;
   --accent-hover: #1AC2B8;
   --accent-secondary: #9B2DE5;
-  --gradient-brand: linear-gradient(90deg, #1E7AEE 0%, #1AC2B8 50%, #9B2DE5 100%);
-  --divider: rgba(255, 255, 255, 0.08);
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Bebas Neue', sans-serif;
+
+  /* Per-class colors — match the live-site coding, sampled along the gradient */
+  --class-barre: #1E7AEE;        /* blue */
+  --class-cycle: #1A8EE0;        /* lighter blue */
+  --class-fitbody: #1AC2B8;      /* teal */
+  --class-matpilates: #7B5BD8;   /* indigo */
+  --class-yoga: #9B2DE5;         /* purple */
+
+  /* Type */
+  --font-sans: var(--font-inter), 'Inter', sans-serif;
+  --font-display: var(--font-bebas), 'Bebas Neue', sans-serif;
+  --font-script: var(--font-caveat), 'Caveat', cursive;
 }
 
 @theme inline {
@@ -27,8 +46,17 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-secondary: var(--accent-secondary);
   --color-divider: var(--divider);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-purple: var(--brand-purple);
+  --color-class-barre: var(--class-barre);
+  --color-class-cycle: var(--class-cycle);
+  --color-class-fitbody: var(--class-fitbody);
+  --color-class-matpilates: var(--class-matpilates);
+  --color-class-yoga: var(--class-yoga);
   --font-sans: var(--font-sans);
   --font-display: var(--font-display);
+  --font-script: var(--font-script);
 }
 
 html {
@@ -44,10 +72,11 @@ body {
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--background);
+  background: var(--brand-purple);
+  color: var(--foreground);
 }
 
+/* Brand gradient text */
 .text-gradient-brand {
   background: var(--gradient-brand);
   -webkit-background-clip: text;
@@ -56,41 +85,69 @@ body {
   color: transparent;
 }
 
-/* Smooth scroll with Lenis */
-html.lenis, html.lenis body {
-  height: auto;
+/* Brand gradient surface */
+.bg-gradient-brand {
+  background: var(--gradient-brand);
 }
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+.bg-gradient-brand-soft {
+  background: var(--gradient-brand-soft);
 }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
+/* Animated gradient — used sparingly on hero wordmark */
+.text-gradient-brand-animated {
+  background: linear-gradient(90deg, #1E7AEE 0%, #1AC2B8 25%, #9B2DE5 50%, #1AC2B8 75%, #1E7AEE 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-shift 8s ease-in-out infinite;
 }
 
-.lenis.lenis-stopped {
-  overflow: hidden;
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
-}
+/* Lenis smooth scroll */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
-
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--background); }
 ::-webkit-scrollbar-thumb {
-  background: var(--text-muted);
-  border-radius: 3px;
+  background: linear-gradient(180deg, var(--brand-blue), var(--brand-purple));
+  border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
+/* Gradient border utility — one extra div trick via background-clip */
+.gradient-border {
+  position: relative;
+  background: var(--background);
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: -1px;
+  border-radius: inherit;
+  background: var(--gradient-brand);
+}
+
+/* Hairline divider — the letsryde-style vertical line */
+.hairline-v {
+  width: 1px;
+  background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
+}
+.hairline-h {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.18) 50%, transparent 100%);
 }

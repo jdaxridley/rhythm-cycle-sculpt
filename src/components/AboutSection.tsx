@@ -2,82 +2,100 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import ScrollReveal from "./ScrollReveal";
 
 export default function AboutSection() {
   return (
-    <section className="py-24 lg:py-32 bg-background overflow-hidden">
+    <section id="about" className="relative py-28 sm:py-36 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image */}
-          <ScrollReveal direction="left">
-            <div className="relative aspect-[4/5] lg:aspect-[3/4] overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Portrait */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 relative"
+          >
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
               <Image
-                src="/hero-bg.jpg"
-                alt="The Rhythm Cycle & Sculpt studio experience"
+                src="/fit-body-class.jpg"
+                alt="Inside Rhythm Cycle & Sculpt"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 1024px) 100vw, 40vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
-              {/* Accent border detail */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full border border-accent/20 -z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
             </div>
-          </ScrollReveal>
 
-          {/* Text content */}
-          <ScrollReveal direction="right" delay={0.2}>
-            <div>
-              <p className="text-accent text-sm tracking-[0.3em] uppercase mb-4 font-medium">
-                Our Studio
+            {/* Caption tag */}
+            <div className="absolute -bottom-4 left-6 lg:-bottom-5 lg:left-8 bg-background border border-divider rounded-full px-5 py-2.5 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-full bg-gradient-brand" />
+              <span className="text-foreground text-xs tracking-[0.3em] uppercase font-medium">
+                Inside the studio
+              </span>
+            </div>
+
+            {/* Decorative gradient frame */}
+            <div className="absolute -top-4 -right-4 w-24 h-24 rounded-2xl border border-foreground/10 -z-10" />
+            <div className="absolute -bottom-8 -right-8 w-40 h-40 rounded-full bg-gradient-brand opacity-10 blur-3xl -z-10" />
+          </motion.div>
+
+          {/* Copy */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7"
+          >
+            <p className="text-text-muted text-[11px] tracking-[0.5em] uppercase mb-5">
+              The Story
+            </p>
+            <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-[0.95] mb-8">
+              Boutique fitness,
+              <br />
+              <span className="text-gradient-brand">built for Shawnee.</span>
+            </h2>
+
+            <div className="space-y-5 text-text-secondary text-base lg:text-lg leading-relaxed max-w-xl">
+              <p>
+                Rhythm Cycle &amp; Sculpt was built on a simple idea: that the
+                best workout in your week shouldn&rsquo;t require a 30-minute
+                drive to the Plaza.
               </p>
-              <h2 className="font-display text-5xl sm:text-6xl tracking-wide uppercase mb-6">
-                Every Body
-                <br />
-                <span className="text-accent">Deserves</span> Rhythm
-              </h2>
-              <div className="space-y-4 text-text-secondary leading-relaxed">
-                <p>
-                  Rhythm Cycle & Sculpt is Shawnee&rsquo;s premier boutique fitness
-                  studio. We believe that movement should feel good, look good, and
-                  leave you better than when you walked in.
-                </p>
-                <p>
-                  Our five class formats&mdash;Cycle, Barre, Fit Body, Mat Pilates,
-                  and Yoga&mdash;are designed to challenge your body and calm your mind.
-                  Every class is led by motivating instructors who meet you where you are.
-                </p>
-                <p>
-                  From the moment you walk through our doors, the details matter. Cold
-                  eucalyptus towels, complimentary protein shakes, private showers with
-                  Dyson hair care, and a specialty coffee bar&mdash;because you deserve
-                  more than just a workout.
+              <p>
+                We&rsquo;re a boutique studio in the heart of Shawnee — five
+                class formats, certified instructors who learn your name, and a
+                space designed to feel like the warmest room in your routine.
+              </p>
+              <p className="text-foreground">
+                Whether it&rsquo;s your first class or your fiftieth, we&rsquo;re
+                here to help you find your rhythm.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="mt-10 grid grid-cols-3 gap-px bg-divider rounded-2xl overflow-hidden border border-divider max-w-xl">
+              <div className="bg-background-secondary px-5 py-6 text-center">
+                <p className="font-display text-4xl lg:text-5xl text-gradient-brand">5</p>
+                <p className="text-text-muted text-[10px] tracking-[0.3em] uppercase mt-2">
+                  Class Formats
                 </p>
               </div>
-              <div className="mt-8 flex items-center gap-6">
-                <div className="text-center">
-                  <p className="font-display text-4xl text-accent">5</p>
-                  <p className="text-text-muted text-xs tracking-widest uppercase mt-1">
-                    Class Types
-                  </p>
-                </div>
-                <div className="w-px h-12 bg-divider" />
-                <div className="text-center">
-                  <p className="font-display text-4xl text-accent">1st</p>
-                  <p className="text-text-muted text-xs tracking-widest uppercase mt-1">
-                    Class Free
-                  </p>
-                </div>
-                <div className="w-px h-12 bg-divider" />
-                <div className="text-center">
-                  <p className="font-display text-4xl text-accent">6</p>
-                  <p className="text-text-muted text-xs tracking-widest uppercase mt-1">
-                    Premium Amenities
-                  </p>
-                </div>
+              <div className="bg-background-secondary px-5 py-6 text-center">
+                <p className="font-display text-4xl lg:text-5xl text-gradient-brand">1st</p>
+                <p className="text-text-muted text-[10px] tracking-[0.3em] uppercase mt-2">
+                  Class Free
+                </p>
+              </div>
+              <div className="bg-background-secondary px-5 py-6 text-center">
+                <p className="font-display text-4xl lg:text-5xl text-gradient-brand">7</p>
+                <p className="text-text-muted text-[10px] tracking-[0.3em] uppercase mt-2">
+                  Days a Week
+                </p>
               </div>
             </div>
-          </ScrollReveal>
+          </motion.div>
         </div>
       </div>
     </section>
