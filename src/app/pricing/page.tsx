@@ -20,6 +20,7 @@ const plans = [
       "No commitment",
     ],
     cta: "Book a Class",
+    href: "/reserve",
     highlighted: false,
   },
   {
@@ -140,7 +141,7 @@ export default function PricingPage() {
                     </ul>
 
                     <Link
-                      href="/contact"
+                      href={plan.href ?? "/contact"}
                       className={`block text-center py-4 text-sm tracking-[0.2em] uppercase font-semibold transition-all duration-300 ${
                         plan.highlighted
                           ? "bg-accent text-background hover:bg-accent-hover"

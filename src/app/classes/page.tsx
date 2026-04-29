@@ -163,7 +163,7 @@ export default function ClassesPage() {
                       ))}
                     </ul>
                     <Link
-                      href="/contact"
+                      href="/reserve"
                       className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-background text-sm tracking-[0.2em] uppercase font-semibold hover:bg-accent-hover transition-all duration-300 hover:gap-4"
                     >
                       Book This Class
