@@ -111,7 +111,7 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: gradient-shift 5s linear infinite;
+  animation: gradient-shift 3.5s linear infinite;
 }
 
 @keyframes gradient-shift {
