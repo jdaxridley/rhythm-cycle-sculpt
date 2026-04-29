@@ -16,7 +16,7 @@ const rowOne: Tile[] = [
 const rowTwo: Tile[] = [
   { src: "/studio-bathroom.jpg", alt: "Barre instructor lunging at the barre", position: "center 15%" },
   { src: "/fit-body-class.jpg", alt: "Fit body class with weights", position: "center 25%" },
-  { src: "/energy-towels.jpg", alt: "Cycle class waving towels", position: "center 35%" },
+  { src: "/energy-towels.jpg", alt: "Cycle class waving towels", position: "center 55%" },
   { src: "/cycle-action.jpg", alt: "Cycle instructor on the bike", position: "center 18%" },
   { src: "/mat-pilates.jpg", alt: "Mat pilates class with stability balls", position: "center 55%" },
 ];
