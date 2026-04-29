@@ -69,7 +69,7 @@ export default function ClassesSection() {
             The Classes
           </p>
           <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-[0.95] mb-6">
-            Five ways to <span className="text-gradient-brand">move</span>
+            Five ways to <span className="text-gradient-brand-animated">move</span>
           </h2>
           <p className="text-text-secondary text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
             Every class is taught by certified instructors who know your name

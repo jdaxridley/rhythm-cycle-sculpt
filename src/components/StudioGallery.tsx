@@ -87,7 +87,7 @@ export default function StudioGallery() {
             The Studio
           </p>
           <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl uppercase tracking-wide leading-[0.95]">
-            Step <span className="text-gradient-brand">inside.</span>
+            Step <span className="text-gradient-brand-animated">inside.</span>
           </h2>
           <p className="text-text-secondary text-base sm:text-lg max-w-xl mx-auto leading-relaxed mt-6">
             A space designed to feel like the warmest hour in your week.

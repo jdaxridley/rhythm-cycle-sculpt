@@ -245,7 +245,7 @@ function SpotlightHero({
           className="font-display text-6xl sm:text-7xl lg:text-8xl xl:text-[8rem] tracking-wide uppercase leading-[0.9] mb-10"
         >
           Find your{" "}
-          <span className="text-gradient-brand">spot.</span>
+          <span className="text-gradient-brand-animated">spot.</span>
         </motion.h1>
 
         {/* Spotlight card — asymmetric image left, content right */}
